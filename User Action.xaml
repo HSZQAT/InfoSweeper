@@ -3,7 +3,7 @@
     <x:Property Name="emails" Type="InOutArgument(scg:List(snm:MailMessage))" />
     <x:Property Name="registerUsers" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>924,2250.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>924,2220</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="18">
@@ -43,14 +43,14 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="793.6,2085.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="793.6,2055.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="752,1569.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap:VirtualizedContainerService.HintSize="752,1414.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -99,13 +99,13 @@
           </ActivityAction>
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="710.4,1019.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="710.4,864" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="email" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="675.2,884.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="675.2,729.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="sortedUsers" />
               </Sequence.Variables>
@@ -133,7 +133,7 @@
                       <av:Point x:Key="ShapeLocation">44.8,76.4</av:Point>
                       <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
                       <av:PointCollection x:Key="REGISTERConnector">62.4,163.6 62.4,193.6 100,193.6 100,285.6</av:PointCollection>
-                      <av:PointCollection x:Key="CHANGEConnector">115.2,141.8 270,141.8 270,415.6</av:PointCollection>
+                      <av:PointCollection x:Key="CHANGEConnector">115.2,141.8 280,141.8 280,415.6</av:PointCollection>
                       <av:PointCollection x:Key="DELETEConnector">115.2,98.2 480,98.2 480,275.6</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -295,7 +295,7 @@
                   <FlowStep x:Key="CHANGE" x:Name="__ReferenceID1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">170,415.6</av:Point>
+                        <av:Point x:Key="ShapeLocation">180,415.6</av:Point>
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -306,6 +306,7 @@
                         <Variable x:TypeArguments="s:String[]" Name="userArray" />
                         <Variable x:TypeArguments="x:Int32" Name="updatedID_int" />
                         <Variable x:TypeArguments="x:String" Name="updatedID" />
+                        <Variable x:TypeArguments="x:String" Name="emailAddress" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -318,7 +319,6 @@
                           <Variable x:TypeArguments="x:String" Name="lastName" />
                           <Variable x:TypeArguments="x:String" Name="fullAddress" />
                           <Variable x:TypeArguments="x:String" Name="telephone" />
-                          <Variable x:TypeArguments="x:String" Name="emailAddress" />
                           <Variable x:TypeArguments="x:String" Name="contentPref" />
                           <Variable x:TypeArguments="x:String" Name="interval" />
                           <Variable x:TypeArguments="x:String" Name="userId" />
@@ -470,6 +470,11 @@
                       </Assign>
                       <ui:RemoveDataRow Row="{x:Null}" DataTable="[registerUsers]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="379.2,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="[updatedID_int - 1]" />
                       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[userArray]" DataTable="[registerUsers]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="379.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                      <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="robotdemo.qaproject@outlook.com" Body="Dear Customer, Your details have been updated. Thankyou, InfoSweeper Team" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="379.2,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="InfoSweeper Updates Details" To="[emailAddress]">
+                        <ui:SendOutlookMail.Files>
+                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                        </ui:SendOutlookMail.Files>
+                      </ui:SendOutlookMail>
                     </Sequence>
                   </FlowStep>
                   <FlowStep x:Key="DELETE" x:Name="__ReferenceID2">
@@ -479,7 +484,7 @@
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Remove" sap:VirtualizedContainerService.HintSize="420.8,1582.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="Remove" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="emailAddressArray" />
                         <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
@@ -648,12 +653,12 @@
                           <InArgument x:TypeArguments="x:Int32">[CInt(updatedID)]</InArgument>
                         </Assign.Value>
                       </Assign>
+                      <ui:RemoveDataRow Row="{x:Null}" DataTable="[registerUsers]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="379.2,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="[updatedID_int - 1]" />
                       <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="robotdemo.qaproject@outlook.com" Body="Dear Customer, we will remove your details &amp; account from our system. You can always sign up again at any point! Thanks, InfoSweeper Team" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="379.2,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="InfoSweeper Account Removal" To="[emailAddress]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendOutlookMail.Files>
                       </ui:SendOutlookMail>
-                      <ui:RemoveDataRow Row="{x:Null}" DataTable="[registerUsers]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="379.2,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="[updatedID_int - 1]" />
                     </Sequence>
                   </FlowStep>
                 </FlowSwitch>
@@ -661,176 +666,25 @@
                 <x:Reference>__ReferenceID1</x:Reference>
                 <x:Reference>__ReferenceID2</x:Reference>
               </Flowchart>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="633.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_14">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="564.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[email.Subject.Equals(&quot;REGISTER&quot;)]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="379.2,934.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="firstName" />
-                            <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
-                            <Variable x:TypeArguments="x:String" Name="lastName" />
-                            <Variable x:TypeArguments="x:String" Name="address" />
-                            <Variable x:TypeArguments="x:String" Name="telephone" />
-                            <Variable x:TypeArguments="x:String" Name="emailAddress" />
-                            <Variable x:TypeArguments="x:String" Name="contentPref" />
-                            <Variable x:TypeArguments="x:String" Name="interval" />
-                            <Variable x:TypeArguments="scg:List(x:String)" Name="userEntry" />
-                            <Variable x:TypeArguments="x:String" Name="fullAddress" />
-                            <Variable x:TypeArguments="x:String" Name="email_change" />
-                            <Variable x:TypeArguments="s:String[]" Name="userArray" />
-                            <Variable x:TypeArguments="s:String[]" Name="emailAddressArray" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap:VirtualizedContainerService.HintSize="337.6,252.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="scg:List(x:String)">[emailList]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="scg:List(x:String)">[email.Body.Split({vbCrLf, vbTab}, stringsplitoptions.RemoveEmptyEntries).ToList]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="scg:List(x:String)">[emailList]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="scg:List(x:String)">[emailList.Where(Function(str) Not String.IsNullOrWhiteSpace(str)).ToList]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </Sequence>
-                          <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="s:String[]">[emailAddressArray]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="s:String[]">[emailList(12).Split({" "}, stringsplitoptions.RemoveEmptyEntries).toArray]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="337.6,286.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                            <ui:MultipleAssign.AssignOperations>
-                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(1))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(3))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[fullAddress]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(5)) + vbCrLf + Trim(emailList(6)) + vbCrLf + Trim(emailList(7)) + vbCrLf + Trim(emailList(8))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[telephone]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(10))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[emailAddress]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailAddressArray(0))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[contentPref]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(14))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[interval]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Trim(emailList(16))]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                              </scg:List>
-                            </ui:MultipleAssign.AssignOperations>
-                          </ui:MultipleAssign>
-                          <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="s:String[]">[userArray]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="s:String[]">[{Nothing, firstName, lastName, fullAddress, telephone, emailAddress, contentPref, interval}]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[userArray]" DataTable="[registerUsers]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                        </Sequence>
-                      </If.Then>
-                    </If>
-                  </Sequence>
-                </ui:CommentOut.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:CommentOut>
-              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="User ID" DataTable="[registerUsers]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="633.6,22.4" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" OutputDataTable="[registerUsers]" SortOrder="Ascending" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="752,290.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="User ID" DataTable="[registerUsers]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="752,22.4" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" OutputDataTable="[registerUsers]" SortOrder="Ascending" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="752,352.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,243.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A:Z" SheetName="Sheet1" ShiftCells="False" ShiftOption="ShiftUp" />
             <ui:ExcelWriteRange AddHeaders="True" DataTable="[registerUsers]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1">
               <ui:ExcelWriteRange.StartingCell>
                 <InArgument x:TypeArguments="x:String">
