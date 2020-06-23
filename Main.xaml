@@ -144,7 +144,7 @@
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="subjectList" />
         <Variable x:TypeArguments="sd:DataTable" Name="BBCTechScrape" />
-        <Variable x:TypeArguments="sd:DataTable" Name="VergeTechScrape" />
+        <Variable x:TypeArguments="sd:DataTable" Name="WikiTechScrape" />
         <Variable x:TypeArguments="sd:DataTable" Name="SiliconTechScrape" />
         <Variable x:TypeArguments="x:Int32" Name="count" />
         <Variable x:TypeArguments="s:String[]" Default="[new String(8){}]" Name="techNewsArray" />
@@ -189,7 +189,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart sap:VirtualizedContainerService.HintSize="425.6,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+              <Flowchart sap:VirtualizedContainerService.HintSize="643.2,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -239,7 +239,7 @@
                             <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap:VirtualizedContainerService.HintSize="525.6,3484.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                        <Sequence sap:VirtualizedContainerService.HintSize="525.6,2908" sap2010:WorkflowViewState.IdRef="Sequence_89">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,7 +261,7 @@
                                     <OutArgument x:TypeArguments="x:String">[website2]</OutArgument>
                                   </ui:AssignOperation.To>
                                   <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">The Verge</InArgument>
+                                    <InArgument x:TypeArguments="x:String">Silicon</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -269,7 +269,7 @@
                                     <OutArgument x:TypeArguments="x:String">[website3]</OutArgument>
                                   </ui:AssignOperation.To>
                                   <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">Silicon</InArgument>
+                                    <InArgument x:TypeArguments="x:String">Wikipedia</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
                               </scg:List>
@@ -296,16 +296,6 @@
                                       </ui:Target>
                                     </ui:ExtractData.Target>
                                   </ui:ExtractData>
-                                  <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="https://www.theverge.com/tech" />
-                                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[VergeTechScrape]" DisplayName="Extract Structured Data 'MAIN  content'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='VergeTechNews' attr='text'&gt;&lt;webctrl tag='div' class='l-reskin l-hub-wrapper has-group-header' idx='1'/&gt;&lt;webctrl tag='div' class='l-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='l-segment l-main-content l-sidebar-fixed river-segment-0' idx='1'/&gt;&lt;webctrl tag='div' class='l-col__main' idx='1'/&gt;&lt;webctrl tag='div' class='c-compact-river' idx='1'/&gt;&lt;webctrl tag='div' class='c-compact-river__entry '/&gt;&lt;webctrl tag='div' class='c-entry-box--compact c-entry-box--compact--article' idx='1'/&gt;&lt;webctrl tag='div' class='c-entry-box--compact__body' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="3" SimulateClick="True">
-                                    <ui:ExtractData.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d7bcbedc-26d0-42cc-be03-23b219032dc4" InformativeScreenshot="1ba1ff7e99c8c0e6e1372bad047cdb25" Selector="&lt;webctrl tag='MAIN' /&gt;" WaitForReady="COMPLETE">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                      </ui:Target>
-                                    </ui:ExtractData.Target>
-                                  </ui:ExtractData>
                                   <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="https://www.silicon.co.uk/" />
                                   <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SiliconTechScrape]" DisplayName="Extract Structured Data 'SECTION  kamino_listing...'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SiliconTechNews' attr='text'&gt;&lt;webctrl tag='div' class='grid-684' idx='1'/&gt;&lt;webctrl tag='article'/&gt;&lt;webctrl tag='section' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_8" MaxNumberOfResults="3" SimulateClick="True">
                                     <ui:ExtractData.Target>
@@ -316,11 +306,21 @@
                                       </ui:Target>
                                     </ui:ExtractData.Target>
                                   </ui:ExtractData>
+                                  <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="https://en.wikipedia.org/wiki/Portal:Technology" />
+                                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[WikiTechScrape]" DisplayName="Extract Structured Data 'DIV  mw-content-text'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Wiki Did You Know' attr='text'&gt;&lt;webctrl tag='div' class='mw-parser-output' idx='1'/&gt;&lt;webctrl tag='div' class='portal-column-left' idx='1'/&gt;&lt;webctrl tag='div' idx='4'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_9" MaxNumberOfResults="100" SimulateClick="True">
+                                    <ui:ExtractData.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2da4bb84-bfbb-45d7-a31d-bc4bbd0a65e4" InformativeScreenshot="486bcf1a9106f7bc49476565b0e37981" Selector="&lt;webctrl id='mw-content-text' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:ExtractData.Target>
+                                  </ui:ExtractData>
                                 </Sequence>
                               </ActivityAction>
                             </ui:OpenBrowser.Body>
                           </ui:OpenBrowser>
-                          <Sequence DisplayName="Collate" sap:VirtualizedContainerService.HintSize="484,1791.2" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                          <Sequence DisplayName="Collate" sap:VirtualizedContainerService.HintSize="484,1776.8" sap2010:WorkflowViewState.IdRef="Sequence_95">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="toSplit" />
                             </Sequence.Variables>
@@ -337,9 +337,9 @@
                                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="380.8,1598.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
+                            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="380.8,1584" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
                               <ui:InterruptibleWhile.Body>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="345.6,1431.2" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="345.6,1416.8" sap2010:WorkflowViewState.IdRef="Sequence_96">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -388,40 +388,6 @@
                                       </Assign.Value>
                                     </Assign>
                                   </Sequence>
-                                  <Sequence DisplayName="Verge" sap:VirtualizedContainerService.HintSize="304,352.8" sap2010:WorkflowViewState.IdRef="Sequence_100">
-                                    <Sequence.Variables>
-                                      <Variable x:TypeArguments="s:String[]" Name="vergeArray" />
-                                    </Sequence.Variables>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_58">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">[toSplit]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[VergeTechScrape.Rows(count)(0).ToString]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_59">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="s:String[]">[vergeArray]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="s:String[]">[toSplit.Split({vbLf}, StringSplitOptions.RemoveEmptyEntries).toArray]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_49">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">[techNewsArray(count + 3)]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">["- " + vergeArray(0) + "." + vbCrLf]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                  </Sequence>
                                   <Sequence DisplayName="Silicon" sap:VirtualizedContainerService.HintSize="304,352.8" sap2010:WorkflowViewState.IdRef="Sequence_101">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="s:String[]" Name="siliconArray" />
@@ -429,6 +395,7 @@
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_61">
@@ -449,10 +416,79 @@
                                     </Assign>
                                     <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_50">
                                       <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[techNewsArray(count + 3)]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">["- " + siliconArray(0) + "." + vbCrLf + vbTab + siliconArray(1) + "." + vbCrLf]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                  <Sequence DisplayName="Wikipedia" sap:VirtualizedContainerService.HintSize="304,338.4" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="s:String[]" Name="wikiArray" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_33">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_103">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[toSplit]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[WikiTechScrape.Rows(count)(0).ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:CommentOut>
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_34">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_104">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="s:String[]">[wikiArray]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[WikiTechScrape.Rows(count)(0).ToString.Replace("...", "")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:CommentOut>
+                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                      <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[techNewsArray(count + 6)]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">["- " + siliconArray(0) + "." + vbCrLf + vbTab + siliconArray(1) + "."]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["- Did you know" + WikiTechScrape.Rows(count)(0).ToString.Replace("...", "")]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                   </Sequence>
@@ -471,37 +507,6 @@
                               </ui:InterruptibleWhile.Condition>
                             </ui:InterruptibleWhile>
                           </Sequence>
-                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_52">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="484,422.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
-                            <ui:InterruptibleWhile.Body>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,255.2" sap2010:WorkflowViewState.IdRef="Sequence_97">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[techNewsArray(count)]" />
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_53">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[count + 1]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                              </Sequence>
-                            </ui:InterruptibleWhile.Body>
-                            <ui:InterruptibleWhile.Condition>
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="count &lt; 9" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
-                            </ui:InterruptibleWhile.Condition>
-                          </ui:InterruptibleWhile>
                         </Sequence>
                       </FlowStep>
                       <FlowStep x:Key="Sport" x:Name="__ReferenceID2">
@@ -517,6 +522,22 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
+                          <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="484,187.2" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" Url="https://www.bbc.co.uk/sport">
+                            <ui:OpenBrowser.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:OpenBrowser.Body>
+                          </ui:OpenBrowser>
                         </Sequence>
                       </FlowStep>
                       <FlowStep x:Key="Hobby" x:Name="__ReferenceID3">
