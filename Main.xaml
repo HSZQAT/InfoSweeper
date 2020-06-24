@@ -117,18 +117,27 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_41">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Action workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="User Action.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="emails">[emails]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="registerUsers">[registerUsers]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_42">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_116">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_117">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Action workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="User Action.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ContentAggregation workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ContentAggregation.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="emails">[emails]</InOutArgument>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="registerUsers">[registerUsers]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="contPref">[contPref]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">[userDatabase]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website1">[website1]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website2">[website2]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website3">[website3]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -140,14 +149,5 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ContentAggregation workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ContentAggregation.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="x:String" x:Key="contPref">[contPref]</InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">[userDatabase]</InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website1">[website1]</InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website2">[website2]</InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website3">[website3]</InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
