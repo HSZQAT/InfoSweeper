@@ -6,10 +6,10 @@
     <x:Property Name="website2" Type="InOutArgument(x:String)" />
     <x:Property Name="website3" Type="InOutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>390,193.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>923.2,3785.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Data</x:String>
       <x:String>System</x:String>
@@ -27,10 +27,12 @@
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -43,9 +45,10 @@
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_84">
+  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="656.8,3620.8" sap2010:WorkflowViewState.IdRef="Sequence_84">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="subjectList" />
       <Variable x:TypeArguments="sd:DataTable" Name="BBCTechScrape" />
@@ -68,6 +71,7 @@
       <Variable x:TypeArguments="x:String" Name="hobbyWebsite1" />
       <Variable x:TypeArguments="x:String" Name="hobbyWebsite2" />
       <Variable x:TypeArguments="x:String" Name="hobbyWebsite3" />
+      <Variable x:TypeArguments="sd:DataTable" Name="contentTransmissionReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -76,6 +80,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[toStoreContent]" DisplayName="Build To Store Data Table" sap:VirtualizedContainerService.HintSize="615.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; default=&quot;Now.ToString(“d-MMM-yyyy”)&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Content&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[contentTransmissionReport]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="615.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date_x002F_Time&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Content_x0020_Piece&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
     <Sequence DisplayName="Tech" sap:VirtualizedContainerService.HintSize="615.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="today" />
@@ -2095,7 +2100,7 @@
         </Sequence>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Store to Content Sent Database" sap:VirtualizedContainerService.HintSize="615.2,732.8" sap2010:WorkflowViewState.IdRef="Sequence_148">
+    <Sequence DisplayName="Store to Content Sent Database" sap:VirtualizedContainerService.HintSize="615.2,1164.8" sap2010:WorkflowViewState.IdRef="Sequence_148">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2110,15 +2115,15 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="573.6,447.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_16">
+      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="573.6,879.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_16">
         <ui:InterruptibleWhile.Body>
-          <Sequence sap:VirtualizedContainerService.HintSize="538.4,280" sap2010:WorkflowViewState.IdRef="Sequence_197">
+          <Sequence sap:VirtualizedContainerService.HintSize="538.4,712" sap2010:WorkflowViewState.IdRef="Sequence_197">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[count]" sap:VirtualizedContainerService.HintSize="496.8,187.2" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[count]" sap:VirtualizedContainerService.HintSize="496.8,619.2" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <Sequence x:Key="0" DisplayName="Body" sap:VirtualizedContainerService.HintSize="379.2,385.6" sap2010:WorkflowViewState.IdRef="Sequence_195">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2147,7 +2152,7 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Today, contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm&quot;), contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                 <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_159">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
@@ -2185,7 +2190,7 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Today, contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm&quot;), contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                 <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_160">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
@@ -2223,7 +2228,7 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Today, contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm&quot;), contPref, subjectNews(0) + vbCrLf + subjectNews(1) + vbCrLf+ subjectNews(2)}]" DataTable="[toStoreContent]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="337.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                 <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_198">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
@@ -2270,14 +2275,18 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="615.2,1299.2" sap2010:WorkflowViewState.IdRef="Sequence_137">
+    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="615.2,1796.8" sap2010:WorkflowViewState.IdRef="Sequence_137">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="firstName" />
+        <Variable x:TypeArguments="x:String" Name="lastName" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="557.6,262.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="558.4,262.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
@@ -2300,13 +2309,13 @@
           </ActivityAction>
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[userDatabase]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="557.6,904" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[userDatabase]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="558.4,1071.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,755.2" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,922.4" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2362,7 +2371,7 @@
                             <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Tech" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                        <Sequence DisplayName="Tech" sap:VirtualizedContainerService.HintSize="379.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2473,7 +2482,7 @@
                             <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Hobby" sap:VirtualizedContainerService.HintSize="379.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                        <Sequence DisplayName="Hobby" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_88">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2527,11 +2536,10 @@
                 <x:Reference>__ReferenceID2</x:Reference>
                 <x:Reference>__ReferenceID3</x:Reference>
               </Flowchart>
-              <Sequence DisplayName="Format" sap:VirtualizedContainerService.HintSize="425.6,569.6" sap2010:WorkflowViewState.IdRef="Sequence_98">
+              <Sequence DisplayName="Format" sap:VirtualizedContainerService.HintSize="425.6,674.4" sap2010:WorkflowViewState.IdRef="Sequence_98">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="template" />
                   <Variable x:TypeArguments="x:String" Name="emailAddress" />
-                  <Variable x:TypeArguments="x:String" Name="firstName" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2549,12 +2557,18 @@
                     <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
                   </ui:GetRowItem.Value>
                 </ui:GetRowItem>
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Last Name" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="384,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[row]">
+                  <ui:GetRowItem.Value>
+                    <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
+                  </ui:GetRowItem.Value>
+                </ui:GetRowItem>
                 <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="robotdemo.qaproject@outlook.com" Body="[String.Format(template, firstName, contPref, website1, subjectNews(0), website2, subjectNews(1), website3, subjectNews(2))]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="384,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[contPref + &quot;News From InfoSweeper&quot;]" To="[emailAddress]">
                   <ui:SendOutlookMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendOutlookMail.Files>
                 </ui:SendOutlookMail>
               </Sequence>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm&quot;), contPref, subjectNews(0)}]" DataTable="[contentTransmissionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="425.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
@@ -2565,6 +2579,23 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="558.4,290.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
+        <ui:ExcelApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_236">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelAppendRange DataTable="[contentTransmissionReport]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_2" SheetName="Sheet5" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ExcelApplicationScope.Body>
+      </ui:ExcelApplicationScope>
     </Sequence>
   </Sequence>
 </Activity>

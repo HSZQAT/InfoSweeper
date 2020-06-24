@@ -136,7 +136,7 @@
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Registration" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Registration" sap:VirtualizedContainerService.HintSize="420.8,1372" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="firstName" />
                         <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
@@ -283,7 +283,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, emailAddress, System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm:ss&quot;), email.Subject}]" DataTable="[userActionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, emailAddress, System.DateTime.Now.ToString(&quot;dd-MM-yyyy hh:mm&quot;), email.Subject}]" DataTable="[userActionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
                       </Sequence>
                       <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Dear &quot; + firstName + &quot;,&quot; + vbCrLf + &quot;Thank you for registering with us. You'll be added to our database shortly.&quot; + vbCrLf + &quot;Regards,&quot; + vbCrLf + &quot;InfoSweeper Team&quot;]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="379.2,118.4" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" MailMessage="[email]" ReplyAll="False">
                         <ui:ReplyToOutlookMailMessage.Files>
