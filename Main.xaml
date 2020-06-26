@@ -108,54 +108,22 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateDummyUserDatabase workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CreateDummyUserDatabase.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="FirstNameDT">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="FirstNameDT" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="lastNameDT">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="lastNameDT" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="addressDT">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="addressDT" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="x:String" x:Key="contPref">
-                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="contPref" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="firstNameArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="firstNameArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="lastNameArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="lastNameArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:Int32[]" x:Key="userIDArray">
-                <mva:VisualBasicReference x:TypeArguments="s:Int32[]" ExpressionText="userIDArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="emailArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="emailArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="contPrefArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="contPrefArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="x:String" x:Key="interval">
-                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="interval" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="intervalArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="intervalArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="userDatabase" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="addressArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="addressArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="addressSplit">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="addressSplit" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="phoneArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="phoneArray" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="s:String[]" x:Key="actualAddressArray">
-                <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="actualAddressArray" />
-              </InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="FirstNameDT">[FirstNameDT]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="lastNameDT">[lastNameDT]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="addressDT">[addressDT]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="contPref">[contPref]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="firstNameArray">[firstNameArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="lastNameArray">[lastNameArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:Int32[]" x:Key="userIDArray">[userIDArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="emailArray">[emailArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="contPrefArray">[contPrefArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="interval">[interval]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="intervalArray">[intervalArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">[userDatabase]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="addressArray">[addressArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="addressSplit">[addressSplit]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="phoneArray">[phoneArray]</InOutArgument>
+              <InOutArgument x:TypeArguments="s:String[]" x:Key="actualAddressArray">[actualAddressArray]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -177,15 +145,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke User Action workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="User Action.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="emails">
-                <mva:VisualBasicReference x:TypeArguments="scg:List(snm:MailMessage)" ExpressionText="emails" />
-              </InOutArgument>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="registerUsers">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="registerUsers" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="njl:JObject" x:Key="config">
-                <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="config" />
-              </InArgument>
+              <InOutArgument x:TypeArguments="scg:List(snm:MailMessage)" x:Key="emails">[emails]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="registerUsers">[registerUsers]</InOutArgument>
+              <InArgument x:TypeArguments="njl:JObject" x:Key="config">[config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -197,46 +159,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ContentAggregation workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ContentAggregation.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="x:String" x:Key="contPref">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="contPref" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="userDatabase" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website1">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="website1" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website2">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="website2" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="website3">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="website3" />
-        </InOutArgument>
-        <InArgument x:TypeArguments="njl:JObject" x:Key="config">
-          <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="config" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_47">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_50">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_136">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_139">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DailyReportPDF workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DailyReportPDF.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ContentAggregation workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ContentAggregation.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              <InOutArgument x:TypeArguments="x:String" x:Key="contPref">[contPref]</InOutArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="userDatabase">[userDatabase]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website1">[website1]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website2">[website2]</InOutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="website3">[website3]</InOutArgument>
+              <InArgument x:TypeArguments="njl:JObject" x:Key="config">[config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
         </Sequence>
       </ui:CommentOut.Body>
@@ -247,5 +192,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DailyReportPDF workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DailyReportPDF.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="config">
+          <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="config" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

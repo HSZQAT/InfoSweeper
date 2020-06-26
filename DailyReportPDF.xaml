@@ -1,4 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DailyReportPDF" sap:VirtualizedContainerService.HintSize="923.2,6571.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DailyReportPDF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="config" Type="InArgument(njl:JObject)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>923.2,6865.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System</x:String>
@@ -18,10 +23,12 @@
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
@@ -35,22 +42,28 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Daily Report PDF" sap:VirtualizedContainerService.HintSize="550.4,6406.4" sap2010:WorkflowViewState.IdRef="Sequence_124">
+  <Sequence DisplayName="Daily Report PDF" sap:VirtualizedContainerService.HintSize="550.4,6700.8" sap2010:WorkflowViewState.IdRef="Sequence_124">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'EXCEL.EXE User'" sap:VirtualizedContainerService.HintSize="508.8,1382.4" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="dae1a1c19097e2083718988d5a30d36c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='User Database - Excel' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'EXCEL.EXE User'" sap:VirtualizedContainerService.HintSize="508.8,1529.6" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="ce2ee02c09508c1076b4f16d8cfcd8b7" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='User Database - Excel' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1235.2" sap2010:WorkflowViewState.IdRef="Sequence_125">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1382.4" sap2010:WorkflowViewState.IdRef="Sequence_125">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -68,7 +81,29 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa8790ce-be18-4400-b377-ee6eba744cae" InformativeScreenshot="5511243d48cc8d4783b47e8ee87e9f92" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='Sheet4' role='Sheet Tab' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa8790ce-be18-4400-b377-ee6eba744cae" InformativeScreenshot="1e12f573d2daae188a3bbb30661e1cf8" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='userActionLog' role='Sheet Tab' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Page up'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea12ba32-7ba3-4b4b-9510-ac9f618f7089" InformativeScreenshot="7cdc6c0a552d04221702e012ee514eb6" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -400,13 +435,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WindowScope>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'EXCEL.EXE User'" sap:VirtualizedContainerService.HintSize="508.8,1420.8" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="d2358e5e08b3132872d178130ff336aa" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='User Database - Excel' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'EXCEL.EXE User'" sap:VirtualizedContainerService.HintSize="508.8,1568" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="ce2ee02c09508c1076b4f16d8cfcd8b7" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='User Database - Excel' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1273.6" sap2010:WorkflowViewState.IdRef="Sequence_132">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,1420.8" sap2010:WorkflowViewState.IdRef="Sequence_132">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -424,7 +459,29 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea78716e-8494-4772-8300-b82937b24adc" InformativeScreenshot="4663c126770831a2aa58dd19d9133ed7" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='Sheet5' role='Sheet Tab' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea78716e-8494-4772-8300-b82937b24adc" InformativeScreenshot="5a8254d7677540bc752a8609d9e35459" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='contentTransmissionLog' role='Sheet Tab' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Page up'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce413c63-725f-4ae9-bcb8-4901b640b73f" InformativeScreenshot="890d43a9e9ea0d111a969f5338f8efb5" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -670,7 +727,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[&quot;C:\Users\helen\Desktop\RPA Project 2\DailyCollatedReport\&quot; + System.DateTime.Now.ToString(&quot;MMddyy&quot;)]">
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[config(&quot;dailyCollatedReportPath&quot;).ToString + System.DateTime.Now.ToString(&quot;MMddyy&quot;)]">
                       <ui:TypeInto.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32086335-e5f7-447f-87d7-9c002309a32f" InformativeScreenshot="1831d43e2caf4e93ee951e358233fbc5" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
                           <ui:Target.TimeoutMS>
