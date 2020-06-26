@@ -7,7 +7,7 @@
     <x:Property Name="website3" Type="InOutArgument(x:String)" />
     <x:Property Name="config" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>923.2,4288.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>923.2,4224.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="14">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -50,9 +50,14 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="817.6,4124" sap2010:WorkflowViewState.IdRef="Sequence_84">
+  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="817.6,4060" sap2010:WorkflowViewState.IdRef="Sequence_84">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="subjectList" />
       <Variable x:TypeArguments="sd:DataTable" Name="BBCTechScrape" />
@@ -84,7 +89,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[toStoreContent]" DisplayName="Build To Store Data Table" sap:VirtualizedContainerService.HintSize="776,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; default=&quot;Now.ToString(“d-MMM-yyyy”)&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Content&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:BuildDataTable DataTable="[contentTransmissionReport]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="776,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date_x002F_Time&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Content_x0020_Piece&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[contentTransmissionReport]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="776,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date_x002F_Time&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;First_x0020_Content_x0020_Piece&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <Sequence DisplayName="Subjects" sap:VirtualizedContainerService.HintSize="776,68.8" sap2010:WorkflowViewState.IdRef="Sequence_237">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2333,7 +2338,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="776,3613.6" sap2010:WorkflowViewState.IdRef="Sequence_137">
+    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="776,3549.6" sap2010:WorkflowViewState.IdRef="Sequence_137">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="firstName" />
         <Variable x:TypeArguments="x:String" Name="lastName" />
@@ -2391,7 +2396,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Get dem q items to datarows boyyyyy" sap:VirtualizedContainerService.HintSize="734.4,712.8" sap2010:WorkflowViewState.IdRef="Sequence_243">
+      <Sequence DisplayName="Get dem q items to datarows boyyyyy" sap:VirtualizedContainerService.HintSize="734.4,648.8" sap2010:WorkflowViewState.IdRef="Sequence_243">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="dayOfWeek" />
         </Sequence.Variables>
@@ -2401,262 +2406,594 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BuildDataTable DataTable="[userDatabase]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="527.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;User_x0020_ID&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Phone_x0020_Number&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Email&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Content_x0020_Preference&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Interval&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;User_x0020_ID&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint2&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;Email&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-        <Assign sap:VirtualizedContainerService.HintSize="527.2,60" sap2010:WorkflowViewState.IdRef="Assign_210">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[dayOfWeek]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">Sunday</InArgument>
-          </Assign.Value>
-        </Assign>
-        <If Condition="[dayOfWeek.Equals(&quot;Saturday&quot;) or dayOfWeek.Equals(&quot;Sunday&quot;)]" sap:VirtualizedContainerService.HintSize="527.2,420" sap2010:WorkflowViewState.IdRef="If_25">
-          <If.Then>
-            <Sequence DisplayName="Weekend Content" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_246">
+        <ui:BuildDataTable DataTable="[userDatabase]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;User_x0020_ID&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phone_x0020_Number&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Content_x0020_Preference&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Interval&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;User_x0020_ID&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;      &lt;xs:unique name=&quot;Constraint2&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;Email&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_255">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Daily Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_241">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="queueName" />
-                  <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="861.6,60" sap2010:WorkflowViewState.IdRef="Assign_201">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">dailyContent</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="861.6,60" sap2010:WorkflowViewState.IdRef="Assign_202">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="861.6,973.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_21">
-                  <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="826.4,806.4" sap2010:WorkflowViewState.IdRef="Sequence_240">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="784.8,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
-                      <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="784.8,651.2" sap2010:WorkflowViewState.IdRef="If_24">
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="478.4,501.6" sap2010:WorkflowViewState.IdRef="Sequence_252">
+              <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_210">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[dayOfWeek]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Friday</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:CommentOut>
+        <Sequence DisplayName="Weekday Content" sap:VirtualizedContainerService.HintSize="333.6,270.4" sap2010:WorkflowViewState.IdRef="Sequence_262">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Daily Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_258">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="queueName" />
+              <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_211">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">dailyContent</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_212">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_24">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_257">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="743.2,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_4" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
+                  <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="743.2,558.4" sap2010:WorkflowViewState.IdRef="If_28">
+                    <If.Then>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_256">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
+                            <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_7" Status="Successful" TransactionItem="[userQueueItem]">
+                              <ui:SetTransactionStatus.Analytics>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Analytics>
+                              <ui:SetTransactionStatus.Output>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Output>
+                            </ui:SetTransactionStatus>
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                              <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_251">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
-                                  <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Status="Successful" TransactionItem="[userQueueItem]">
-                                    <ui:SetTransactionStatus.Analytics>
-                                      <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                                    </ui:SetTransactionStatus.Analytics>
-                                    <ui:SetTransactionStatus.Output>
-                                      <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                                    </ui:SetTransactionStatus.Output>
-                                  </ui:SetTransactionStatus>
-                                </Sequence>
-                              </TryCatch.Try>
-                              <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ActivityAction x:TypeArguments="s:Exception">
-                                    <ActivityAction.Argument>
-                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                    </ActivityAction.Argument>
-                                    <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
-                                      <ui:SetTransactionStatus.Analytics>
-                                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                                      </ui:SetTransactionStatus.Analytics>
-                                      <ui:SetTransactionStatus.Output>
-                                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-                                      </ui:SetTransactionStatus.Output>
-                                    </ui:SetTransactionStatus>
-                                  </ActivityAction>
-                                </Catch>
-                              </TryCatch.Catches>
-                            </TryCatch>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_8" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
+                                <ui:SetTransactionStatus.Analytics>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Analytics>
+                                <ui:SetTransactionStatus.Output>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Output>
+                              </ui:SetTransactionStatus>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_213">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+          <Sequence DisplayName="Weekday Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_261">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="queueName" />
+              <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_214">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">weekdayContent</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_215">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_25">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_260">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="743.2,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_5" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
+                  <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="743.2,558.4" sap2010:WorkflowViewState.IdRef="If_29">
+                    <If.Then>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_259">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+                            <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_9" Status="Successful" TransactionItem="[userQueueItem]">
+                              <ui:SetTransactionStatus.Analytics>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Analytics>
+                              <ui:SetTransactionStatus.Output>
+                                <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                              </ui:SetTransactionStatus.Output>
+                            </ui:SetTransactionStatus>
                           </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_203">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
-                      </If>
-                    </Sequence>
-                  </ui:InterruptibleWhile.Body>
-                  <ui:InterruptibleWhile.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" />
-                  </ui:InterruptibleWhile.Condition>
-                </ui:InterruptibleWhile>
-              </Sequence>
-            </Sequence>
-          </If.Then>
-          <If.Else>
-            <Sequence DisplayName="Weekday Content" sap:VirtualizedContainerService.HintSize="241.6,270.4" sap2010:WorkflowViewState.IdRef="Sequence_242">
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_10" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
+                                <ui:SetTransactionStatus.Analytics>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Analytics>
+                                <ui:SetTransactionStatus.Output>
+                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                </ui:SetTransactionStatus.Output>
+                              </ui:SetTransactionStatus>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_216">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </Sequence>
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="568.8,512.8" sap2010:WorkflowViewState.IdRef="Sequence_263">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Daily Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_248">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="queueName" />
-                  <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="583.2,60" sap2010:WorkflowViewState.IdRef="Assign_204">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">dailyContent</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="583.2,60" sap2010:WorkflowViewState.IdRef="Assign_205">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="583.2,532" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_22">
-                  <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,364.8" sap2010:WorkflowViewState.IdRef="Sequence_247">
+              <If Condition="[dayOfWeek.Equals(&quot;Saturday&quot;) or dayOfWeek.Equals(&quot;Sunday&quot;)]" sap:VirtualizedContainerService.HintSize="527.2,420" sap2010:WorkflowViewState.IdRef="If_25">
+                <If.Then>
+                  <Sequence DisplayName="Weekend Content" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_246">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Daily Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_241">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                        <Variable x:TypeArguments="x:String" Name="queueName" />
+                        <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="506.4,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_2" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
-                      <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="506.4,209.6" sap2010:WorkflowViewState.IdRef="If_26">
-                        <If.Then>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
-                        </If.Then>
-                        <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_206">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
-                      </If>
+                      <Assign sap:VirtualizedContainerService.HintSize="861.6,60" sap2010:WorkflowViewState.IdRef="Assign_201">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">dailyContent</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="861.6,60" sap2010:WorkflowViewState.IdRef="Assign_202">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="861.6,973.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_21">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="826.4,806.4" sap2010:WorkflowViewState.IdRef="Sequence_240">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="784.8,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
+                            <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="784.8,651.2" sap2010:WorkflowViewState.IdRef="If_24">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="478.4,501.6" sap2010:WorkflowViewState.IdRef="Sequence_252">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                    <TryCatch.Try>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_251">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                                        <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Status="Successful" TransactionItem="[userQueueItem]">
+                                          <ui:SetTransactionStatus.Analytics>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Analytics>
+                                          <ui:SetTransactionStatus.Output>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Output>
+                                        </ui:SetTransactionStatus>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
+                                            <ui:SetTransactionStatus.Analytics>
+                                              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                            </ui:SetTransactionStatus.Analytics>
+                                            <ui:SetTransactionStatus.Output>
+                                              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                            </ui:SetTransactionStatus.Output>
+                                          </ui:SetTransactionStatus>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_203">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                        </ui:InterruptibleWhile.Condition>
+                      </ui:InterruptibleWhile>
                     </Sequence>
-                  </ui:InterruptibleWhile.Body>
-                </ui:InterruptibleWhile>
-              </Sequence>
-              <Sequence DisplayName="Weekday Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_250">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="queueName" />
-                  <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="583.2,60" sap2010:WorkflowViewState.IdRef="Assign_207">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">weekdayContent</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="583.2,60" sap2010:WorkflowViewState.IdRef="Assign_208">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="583.2,532" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_23">
-                  <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,364.8" sap2010:WorkflowViewState.IdRef="Sequence_249">
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Weekday Content" sap:VirtualizedContainerService.HintSize="241.6,270.4" sap2010:WorkflowViewState.IdRef="Sequence_242">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Daily Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_248">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                        <Variable x:TypeArguments="x:String" Name="queueName" />
+                        <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="506.4,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_3" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
-                      <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="506.4,209.6" sap2010:WorkflowViewState.IdRef="If_27">
-                        <If.Then>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
-                        </If.Then>
-                        <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_209">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
-                      </If>
+                      <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_204">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">dailyContent</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_205">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_22">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_247">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="743.2,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_2" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
+                            <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="743.2,558.4" sap2010:WorkflowViewState.IdRef="If_26">
+                              <If.Then>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                  <TryCatch.Try>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_253">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+                                      <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_3" Status="Successful" TransactionItem="[userQueueItem]">
+                                        <ui:SetTransactionStatus.Analytics>
+                                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                        </ui:SetTransactionStatus.Analytics>
+                                        <ui:SetTransactionStatus.Output>
+                                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                        </ui:SetTransactionStatus.Output>
+                                      </ui:SetTransactionStatus>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_4" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
+                                          <ui:SetTransactionStatus.Analytics>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Analytics>
+                                          <ui:SetTransactionStatus.Output>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Output>
+                                        </ui:SetTransactionStatus>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                              </If.Then>
+                              <If.Else>
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_206">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                        </ui:InterruptibleWhile.Condition>
+                      </ui:InterruptibleWhile>
                     </Sequence>
-                  </ui:InterruptibleWhile.Body>
-                </ui:InterruptibleWhile>
-              </Sequence>
+                    <Sequence DisplayName="Weekday Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_250">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="queueName" />
+                        <Variable x:TypeArguments="x:Boolean" Name="keepLooping" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_207">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[queueName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">weekdayContent</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="820,60" sap2010:WorkflowViewState.IdRef="Assign_208">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_23">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_249">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="ui:QueueItem" Name="userQueueItem" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="743.2,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItem_3" QueueType="[queueName]" TransactionItem="[userQueueItem]" />
+                            <If Condition="[userQueueItem isNot Nothing]" sap:VirtualizedContainerService.HintSize="743.2,558.4" sap2010:WorkflowViewState.IdRef="If_27">
+                              <If.Then>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,408.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                  <TryCatch.Try>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_254">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userQueueItem.SpecificContent(&quot;User ID&quot;).ToString, userQueueItem.SpecificContent(&quot;First Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Last Name&quot;).ToString, userQueueItem.SpecificContent(&quot;Address&quot;).ToString, userQueueItem.SpecificContent(&quot;Phone Number&quot;).ToString, userQueueItem.SpecificContent(&quot;Email&quot;).ToString, userQueueItem.SpecificContent(&quot;Content Preference&quot;).ToString, userQueueItem.SpecificContent(&quot;Interval&quot;).ToString}]" DataTable="[userDatabase]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+                                      <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_5" Status="Successful" TransactionItem="[userQueueItem]">
+                                        <ui:SetTransactionStatus.Analytics>
+                                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                        </ui:SetTransactionStatus.Analytics>
+                                        <ui:SetTransactionStatus.Output>
+                                          <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                        </ui:SetTransactionStatus.Output>
+                                      </ui:SetTransactionStatus>
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_6" Reason="User Queue Item not passed into workflow" Status="Failed" TransactionItem="[userQueueItem]">
+                                          <ui:SetTransactionStatus.Analytics>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Analytics>
+                                          <ui:SetTransactionStatus.Output>
+                                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                          </ui:SetTransactionStatus.Output>
+                                        </ui:SetTransactionStatus>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                              </If.Then>
+                              <If.Else>
+                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_209">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[keepLooping]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <ui:InterruptibleWhile.Condition>
+                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                        </ui:InterruptibleWhile.Condition>
+                      </ui:InterruptibleWhile>
+                    </Sequence>
+                  </Sequence>
+                </If.Else>
+              </If>
             </Sequence>
-          </If.Else>
-        </If>
+          </ui:CommentOut.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:CommentOut>
       </Sequence>
       <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[userDatabase]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="734.4,1655.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
