@@ -2675,8 +2675,8 @@
                 </Assign.Value>
               </Assign>
               <ui:ExcelWriteRange AddHeaders="False" DataTable="[contentTransmissionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="[config(&quot;contentTransmissionLogSheet&quot;).ToString]" StartingCell="[&quot;A&quot; + (rowCount + 2).ToString]" />
-              <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A2:Z2" SheetName="dailyContentTransmissionLog" ShiftCells="True" ShiftOption="ShiftUp" />
-              <ui:ExcelWriteRange AddHeaders="False" DataTable="[contentTransmissionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="dailyContentTransmissionLog" StartingCell="A2" />
+              <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A2:Z2" SheetName="[config(&quot;dailyContentTransmissionLogSheet&quot;).ToString]" ShiftCells="True" ShiftOption="ShiftUp" />
+              <ui:ExcelWriteRange AddHeaders="False" DataTable="[contentTransmissionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="[config(&quot;dailyContentTransmissionLogSheet&quot;).ToString]" StartingCell="A2" />
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,259.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_238">

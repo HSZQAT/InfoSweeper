@@ -690,8 +690,8 @@
               </ui:ExcelWriteRange.StartingCell>
             </ui:ExcelWriteRange>
             <ui:ExcelAppendRange DataTable="[userActionReport]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[config(&quot;userActionLogSheet&quot;).ToString]" />
-            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A2:Z2" SheetName="dailyUserActionLog" ShiftCells="True" ShiftOption="ShiftUp" />
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[userActionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="dailyUserActionLog" StartingCell="A2" />
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A2:Z2" SheetName="[config(&quot;dailyUserActionLogSheet&quot;).ToString]" ShiftCells="True" ShiftOption="ShiftUp" />
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[userActionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="[config(&quot;dailyUserActionLogSheet&quot;).ToString]" StartingCell="A2" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
