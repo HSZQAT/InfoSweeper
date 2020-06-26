@@ -4,7 +4,7 @@
     <x:Property Name="registerUsers" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="config" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>923.2,2262.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>923.2,2452.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -53,7 +53,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="793.6,2097.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="793.6,2288" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="userActionReport" />
     </Sequence.Variables>
@@ -303,7 +303,7 @@
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Update" sap:VirtualizedContainerService.HintSize="420.8,1632.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <Sequence DisplayName="Update" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
                         <Variable x:TypeArguments="s:String[]" Name="emailAddressArray" />
@@ -669,13 +669,13 @@
       </ui:ForEach>
     </Sequence>
     <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="User ID" DataTable="[registerUsers]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="752,22.4" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" OutputDataTable="[registerUsers]" SortOrder="Ascending" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="752,480.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="752,671.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,371.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,561.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -690,6 +690,8 @@
               </ui:ExcelWriteRange.StartingCell>
             </ui:ExcelWriteRange>
             <ui:ExcelAppendRange DataTable="[userActionReport]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[config(&quot;userActionLogSheet&quot;).ToString]" />
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A2:Z2" SheetName="dailyUserActionLog" ShiftCells="True" ShiftOption="ShiftUp" />
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[userActionReport]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="dailyUserActionLog" StartingCell="A2" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>

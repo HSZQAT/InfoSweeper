@@ -81,7 +81,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa8790ce-be18-4400-b377-ee6eba744cae" InformativeScreenshot="1e12f573d2daae188a3bbb30661e1cf8" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='userActionLog' role='Sheet Tab' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa8790ce-be18-4400-b377-ee6eba744cae" InformativeScreenshot="6d76e57bb369e22e00554eed24437a63" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='dailyUserActionLog' role='Sheet Tab' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -103,7 +103,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea12ba32-7ba3-4b4b-9510-ac9f618f7089" InformativeScreenshot="7cdc6c0a552d04221702e012ee514eb6" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea12ba32-7ba3-4b4b-9510-ac9f618f7089" InformativeScreenshot="634b17971de06ea9cb7b55b973b7691d" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -125,7 +125,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2f20aeb-7151-4372-a0fa-60de860ce7ea" InformativeScreenshot="078d48ad7a1df7914bedb3e1b51cbe59" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='&amp;quot;A&amp;quot; 1' role='item' tableCol='1' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2f20aeb-7151-4372-a0fa-60de860ce7ea" InformativeScreenshot="a6e4be33fa0bdb525405a55175a29bf2" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='&amp;quot;A&amp;quot; 1' role='item' tableCol='1' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -459,7 +459,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea78716e-8494-4772-8300-b82937b24adc" InformativeScreenshot="5a8254d7677540bc752a8609d9e35459" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='contentTransmissionLog' role='Sheet Tab' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea78716e-8494-4772-8300-b82937b24adc" InformativeScreenshot="eb4b71cc9cff25d39d700b51e7c032aa" Selector="&lt;uia automationid='User Database.xlsx' cls='ExcelBookTabControl' name='User Database' /&gt;&lt;uia automationid='SheetTab' name='dailyContentTransmissionLog' role='Sheet Tab' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -481,7 +481,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce413c63-725f-4ae9-bcb8-4901b640b73f" InformativeScreenshot="890d43a9e9ea0d111a969f5338f8efb5" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce413c63-725f-4ae9-bcb8-4901b640b73f" InformativeScreenshot="026b0258f4675a6870ae9d89d35d2dd5" Selector="&lt;uia cls='NetUIRepeatButton' name='Page up' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -503,7 +503,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f7a1c9aa-db61-453b-b182-dcc037b3055d" InformativeScreenshot="aedaa8b79e698065a3f39fdf9c622e63" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='&amp;quot;A&amp;quot; 1' role='item' tableCol='1' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f7a1c9aa-db61-453b-b182-dcc037b3055d" InformativeScreenshot="1e71f4aee9811e77c64d5343c4d20010" Selector="&lt;uia automationid='Grid' name='Grid' role='data grid' /&gt;&lt;uia name='&amp;quot;A&amp;quot; 1' role='item' tableCol='1' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
