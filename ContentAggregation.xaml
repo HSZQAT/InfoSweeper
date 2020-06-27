@@ -7,7 +7,7 @@
     <x:Property Name="website3" Type="InOutArgument(x:String)" />
     <x:Property Name="config" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>923.2,4224.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>807.2,3297.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -57,7 +57,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="817.6,4060" sap2010:WorkflowViewState.IdRef="Sequence_84">
+  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="817.6,3132.8" sap2010:WorkflowViewState.IdRef="Sequence_84">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="subjectList" />
       <Variable x:TypeArguments="sd:DataTable" Name="BBCTechScrape" />
@@ -2338,7 +2338,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="776,3549.6" sap2010:WorkflowViewState.IdRef="Sequence_137">
+    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="776,2622.4" sap2010:WorkflowViewState.IdRef="Sequence_137">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="firstName" />
         <Variable x:TypeArguments="x:String" Name="lastName" />
@@ -2465,7 +2465,7 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_24">
+            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_24">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_257">
                   <Sequence.Variables>
@@ -2536,6 +2536,9 @@
                   </If>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
           </Sequence>
           <Sequence DisplayName="Weekday Users" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_261">
@@ -2565,7 +2568,7 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InterruptibleWhile Condition="[keepLooping = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_25">
+            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="820,880.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_25">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="784.8,713.6" sap2010:WorkflowViewState.IdRef="Sequence_260">
                   <Sequence.Variables>
@@ -2636,6 +2639,9 @@
                   </If>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="keepLooping = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_5" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
           </Sequence>
         </Sequence>
@@ -3254,7 +3260,7 @@
                     <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
                   </ui:GetRowItem.Value>
                 </ui:GetRowItem>
-                <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="robotdemo.qaproject@outlook.com" Body="[String.Format(template, firstName, contPref, website1, subjectNews(0), website2, subjectNews(1), website3, subjectNews(2))]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="384,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[contPref + &quot;News From InfoSweeper&quot;]" To="[emailAddress]">
+                <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[String.Format(template, firstName, contPref, website1, subjectNews(0), website2, subjectNews(1), website3, subjectNews(2))]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="384,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="[contPref + &quot;News From InfoSweeper&quot;]" To="[emailAddress]">
                   <ui:SendOutlookMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendOutlookMail.Files>
@@ -3271,7 +3277,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="734.4,980" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="734.4,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
@@ -3327,7 +3333,7 @@
         </ui:ExcelApplicationScope.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
