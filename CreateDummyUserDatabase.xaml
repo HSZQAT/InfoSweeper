@@ -17,7 +17,7 @@
     <x:Property Name="phoneArray" Type="InOutArgument(s:String[])" />
     <x:Property Name="actualAddressArray" Type="InOutArgument(s:String[])" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>923.2,656.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>924,656.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -56,7 +56,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create Dummy User Database" sap:VirtualizedContainerService.HintSize="600,492" sap2010:WorkflowViewState.IdRef="Sequence_47">
+  <Sequence DisplayName="Create Dummy User Database" sap:VirtualizedContainerService.HintSize="643.2,492" sap2010:WorkflowViewState.IdRef="Sequence_47">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="dataTable3" />
     </Sequence.Variables>
@@ -66,7 +66,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Set Up Database" sap:VirtualizedContainerService.HintSize="558.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+    <Sequence DisplayName="Set Up Database" sap:VirtualizedContainerService.HintSize="601.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="count" />
         <Variable x:TypeArguments="sd:DataTable" Name="fullDT" />
@@ -77,7 +77,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser &quot;Best Randoms&quot;" sap:VirtualizedContainerService.HintSize="484,481.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.bestrandoms.com/random-names">
+      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser &quot;Best Randoms&quot;" sap:VirtualizedContainerService.HintSize="484,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.bestrandoms.com/random-names">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -221,6 +221,12 @@
             </Sequence>
           </ActivityAction>
         </ui:OpenBrowser.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </ui:OpenBrowser>
       <Sequence DisplayName="Assign Data to Arrays" sap:VirtualizedContainerService.HintSize="484,1314.4" sap2010:WorkflowViewState.IdRef="Sequence_72">
         <sap:WorkflowViewStateService.ViewState>
@@ -611,7 +617,7 @@
         </ui:InterruptibleWhile>
       </Sequence>
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="558.4,290.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\User Database.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="601.6,290.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="C:\Users\helen\Desktop\RPA Project 2\UIPath Automation\InfoSweeper\InfoSweeper Database.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
