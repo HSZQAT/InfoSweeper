@@ -4,7 +4,7 @@
     <x:Property Name="registerUsers" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="config" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>924,1587.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>924,776</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -54,7 +54,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="User Action Sequence" sap:VirtualizedContainerService.HintSize="793.6,1422.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="User Action Sequence" sap:VirtualizedContainerService.HintSize="283.2,611.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="userActionReport" />
     </Sequence.Variables>
@@ -64,21 +64,47 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Process User Action Emails" sap:VirtualizedContainerService.HintSize="752,1065.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Process User Action Emails" sap:VirtualizedContainerService.HintSize="241.6,254.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Set Up/Read Ins" sap:VirtualizedContainerService.HintSize="710.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_72">
+      <Sequence DisplayName="Set Up/Read Ins" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_72">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetOutlookMailMessages Filter="{x:Null}" TimeoutMS="{x:Null}" Account="[config(&quot;outlookAccount&quot;).ToString]" DisplayName="Get User Action Email Requests" GetAttachements="False" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="[config(&quot;outlookMailFolder&quot;).ToString]" MarkAsRead="False" Messages="[emails]" OnlyUnreadMessages="True" Top="5" />
+        <TryCatch DisplayName="Try Catch Get User Action Emails" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch.Try>
+            <ui:GetOutlookMailMessages Filter="{x:Null}" TimeoutMS="{x:Null}" Account="[config(&quot;outlookAccount&quot;).ToString]" DisplayName="Get User Action Email Requests" GetAttachements="False" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="[config(&quot;outlookMailFolder&quot;).ToString]" MarkAsRead="False" Messages="[emails]" OnlyUnreadMessages="True" Top="5" />
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[&quot;Please check internet connection or outlook account.&quot;]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
         <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open Excel UserDatabase Workbook" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
@@ -118,7 +144,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:BuildDataTable>
       </Sequence>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each User Action Email" sap:VirtualizedContainerService.HintSize="710.4,864" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each User Action Email" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
@@ -163,7 +189,7 @@
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Registration" sap:VirtualizedContainerService.HintSize="241.6,488" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Registration" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="firstName" />
                         <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
@@ -321,7 +347,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, emailAddress, System.DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm&quot;), email.Subject}]" DataTable="[userActionReport]" DisplayName="Add User Action Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
                       </Sequence>
-                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="425.6,360" sap2010:WorkflowViewState.IdRef="Sequence_67">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="template" />
                         </Sequence.Variables>
@@ -538,7 +564,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, emailAddress, System.DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm&quot;), email.Subject}]" DataTable="[userActionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
                       </Sequence>
-                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="337.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="425.6,360" sap2010:WorkflowViewState.IdRef="Sequence_66">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="template" />
                         </Sequence.Variables>
@@ -564,7 +590,7 @@
                         <av:Size x:Key="ShapeSize">200,68.8</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Remove" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="Remove" sap:VirtualizedContainerService.HintSize="283.2,550.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="emailAddressArray" />
                         <Variable x:TypeArguments="scg:List(x:String)" Name="emailList" />
@@ -596,7 +622,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Format email contents" sap:VirtualizedContainerService.HintSize="262.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <Sequence DisplayName="Format email contents" sap:VirtualizedContainerService.HintSize="379.2,648" sap2010:WorkflowViewState.IdRef="Sequence_45">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -701,7 +727,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, emailAddress, System.DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm&quot;), email.Subject}]" DataTable="[userActionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
                       </Sequence>
-                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                      <Sequence DisplayName="Email User" sap:VirtualizedContainerService.HintSize="425.6,360" sap2010:WorkflowViewState.IdRef="Sequence_68">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="template" />
                         </Sequence.Variables>
@@ -730,26 +756,26 @@
         </ui:ForEach.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
-    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="User ID" DataTable="[registerUsers]" DisplayName="Sort Registered Users Numerically" sap:VirtualizedContainerService.HintSize="752,22.4" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" OutputDataTable="[registerUsers]" SortOrder="Ascending" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open Excel UserDatabase Workbook" sap:VirtualizedContainerService.HintSize="752,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="User ID" DataTable="[registerUsers]" DisplayName="Sort Registered Users Numerically" sap:VirtualizedContainerService.HintSize="241.6,22.4" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Ascending" OutputDataTable="[registerUsers]" SortOrder="Ascending" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open Excel UserDatabase Workbook" sap:VirtualizedContainerService.HintSize="241.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Write To" sap:VirtualizedContainerService.HintSize="241.6,379.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Write To" sap:VirtualizedContainerService.HintSize="416.8,553.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="User Database" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_69">
+            <Sequence DisplayName="User Database" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_69">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -771,7 +797,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ExcelWriteRange>
             </Sequence>
-            <Sequence DisplayName="User Action Report" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_70">
+            <Sequence DisplayName="User Action Report" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_70">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -780,7 +806,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:ExcelAppendRange DataTable="[userActionReport]" DisplayName="Add New User Actions to User Action Report" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[config(&quot;userActionLogSheet&quot;).ToString]" />
             </Sequence>
-            <Sequence DisplayName="Daily User Action Report" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_71">
+            <Sequence DisplayName="Daily User Action Report" sap:VirtualizedContainerService.HintSize="375.2,243.2" sap2010:WorkflowViewState.IdRef="Sequence_71">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -800,7 +826,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="Add to queues" sap:VirtualizedContainerService.HintSize="752,68.8" sap2010:WorkflowViewState.IdRef="Sequence_62">
+    <Sequence DisplayName="Add to queues" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_62">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dailyUsers" />
         <Variable x:TypeArguments="sd:DataTable" Name="weekdayUsers" />

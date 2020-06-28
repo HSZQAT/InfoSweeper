@@ -7,7 +7,7 @@
     <x:Property Name="website3" Type="InOutArgument(x:String)" />
     <x:Property Name="config" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>924,3277.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>924,1459.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,7 +58,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="817.6,3112.8" sap2010:WorkflowViewState.IdRef="Sequence_84">
+  <Sequence DisplayName="Content Aggregation" sap:VirtualizedContainerService.HintSize="324.8,1294.4" sap2010:WorkflowViewState.IdRef="Sequence_84">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="subjectList" />
       <Variable x:TypeArguments="sd:DataTable" Name="BBCTechScrape" />
@@ -89,20 +89,20 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Building Datatables" sap:VirtualizedContainerService.HintSize="776,252.8" sap2010:WorkflowViewState.IdRef="Sequence_264">
+    <Sequence DisplayName="Building Datatables" sap:VirtualizedContainerService.HintSize="283.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_264">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:BuildDataTable DataTable="[toStoreContent]" DisplayName="Build To Store Content Datatable" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; default=&quot;Now.ToString(“d-MMM-yyyy”)&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Content&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
       <ui:BuildDataTable DataTable="[contentTransmissionReport]" DisplayName="Build Content Transmission Report Datatable" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date_x002F_Time&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Subject&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Content_x0020_Piece&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Content_x0020_Delivery_x0020_Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
     </Sequence>
-    <Sequence DisplayName="Subjects" sap:VirtualizedContainerService.HintSize="776,68.8" sap2010:WorkflowViewState.IdRef="Sequence_237">
+    <Sequence DisplayName="Subjects" sap:VirtualizedContainerService.HintSize="241.6,488" sap2010:WorkflowViewState.IdRef="Sequence_237">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -198,58 +198,84 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[config(&quot;techSiteBBC&quot;).ToString]">
-          <ui:OpenBrowser.Body>
-            <ActivityAction x:TypeArguments="x:Object">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_117">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[BBCTechScrape]" DisplayName="Extract Structured Data BBC" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='BBC Tech News' attr='text'&gt;&lt;webctrl tag='div' class='nw-c-seven-slice gel-layout gel-layout--equal b-pw-1280' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout__item gel-1/1' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout gel-layout--equal' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout__item gel-1/1 gel-3/5@xxl gs-u-display-none@xl gs-u-display-block@xxl' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout gel-layout--equal' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_13" MaxNumberOfResults="3" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f07bb9b-0395-47b2-9400-8e8b97c1d174" InformativeScreenshot="a0adc4a978002107ee2ff773c4822cf9" Selector="&lt;webctrl id='topos-component' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Silicon" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[config(&quot;techSiteSilicon&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SiliconTechScrape]" DisplayName="Extract Structured Data Silicon" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SiliconTechNews' attr='text'&gt;&lt;webctrl tag='div' class='grid-684' idx='1'/&gt;&lt;webctrl tag='article'/&gt;&lt;webctrl tag='section' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="3" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="210d25e4-7c63-4809-abc9-6f1b9a8033d4" InformativeScreenshot="371c6cbbc232f167b1857e062585604d" Selector="&lt;webctrl id='kamino_listing_posts_widget-2' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_8" Url="[config(&quot;techSiteWikipedia&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[WikiTechScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Wiki Did You Know' attr='text'&gt;&lt;webctrl tag='div' class='mw-parser-output' idx='1'/&gt;&lt;webctrl tag='div' class='portal-column-left' idx='1'/&gt;&lt;webctrl tag='div' idx='4'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_15" MaxNumberOfResults="100" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2da4bb84-bfbb-45d7-a31d-bc4bbd0a65e4" InformativeScreenshot="486bcf1a9106f7bc49476565b0e37981" Selector="&lt;webctrl id='mw-content-text' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-              </Sequence>
-            </ActivityAction>
-          </ui:OpenBrowser.Body>
+        <TryCatch DisplayName="Try Catch Open Brower" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </ui:OpenBrowser>
+          <TryCatch.Try>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[config(&quot;techSiteBBC&quot;).ToString]">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="375.2,694.4" sap2010:WorkflowViewState.IdRef="Sequence_117">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[BBCTechScrape]" DisplayName="Extract Structured Data BBC" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='BBC Tech News' attr='text'&gt;&lt;webctrl tag='div' class='nw-c-seven-slice gel-layout gel-layout--equal b-pw-1280' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout__item gel-1/1' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout gel-layout--equal' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout__item gel-1/1 gel-3/5@xxl gs-u-display-none@xl gs-u-display-block@xxl' idx='1'/&gt;&lt;webctrl tag='div' class='gel-layout gel-layout--equal' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_13" MaxNumberOfResults="3" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f07bb9b-0395-47b2-9400-8e8b97c1d174" InformativeScreenshot="a0adc4a978002107ee2ff773c4822cf9" Selector="&lt;webctrl id='topos-component' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Silicon" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="[config(&quot;techSiteSilicon&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[SiliconTechScrape]" DisplayName="Extract Structured Data Silicon" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='SiliconTechNews' attr='text'&gt;&lt;webctrl tag='div' class='grid-684' idx='1'/&gt;&lt;webctrl tag='article'/&gt;&lt;webctrl tag='section' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="3" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="210d25e4-7c63-4809-abc9-6f1b9a8033d4" InformativeScreenshot="371c6cbbc232f167b1857e062585604d" Selector="&lt;webctrl id='kamino_listing_posts_widget-2' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_8" Url="[config(&quot;techSiteWikipedia&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[WikiTechScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Wiki Did You Know' attr='text'&gt;&lt;webctrl tag='div' class='mw-parser-output' idx='1'/&gt;&lt;webctrl tag='div' class='portal-column-left' idx='1'/&gt;&lt;webctrl tag='div' idx='4'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_15" MaxNumberOfResults="100" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2da4bb84-bfbb-45d7-a31d-bc4bbd0a65e4" InformativeScreenshot="486bcf1a9106f7bc49476565b0e37981" Selector="&lt;webctrl id='mw-content-text' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Fatal" Message="[&quot;Please check internet connection or website URLs in config file.&quot;]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
         <Sequence DisplayName="Tech Stored Content" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_150">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -310,21 +336,22 @@
                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="333.6,328.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_10">
+            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="333.6,236" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_10">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_157">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Format &amp; Check Against" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                  <Sequence DisplayName="Format &amp; Check Against" sap:VirtualizedContainerService.HintSize="241.6,254.4" sap2010:WorkflowViewState.IdRef="Sequence_138">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="s:String[]" Name="bbcArray" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -963,57 +990,83 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="[config(&quot;sportSiteCNN&quot;).ToString]">
-          <ui:OpenBrowser.Body>
-            <ActivityAction x:TypeArguments="x:Object">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="375.2,694.4" sap2010:WorkflowViewState.IdRef="Sequence_124">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[cnnSportScrape]" DisplayName="Extract Structured Data CNN" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='CNNSportNews' attr='text'&gt;&lt;webctrl tag='div' class='l-container' idx='1'/&gt;&lt;webctrl tag='div' class='zn__containers' idx='1'/&gt;&lt;webctrl tag='div' class='column zn' idx='1'/&gt;&lt;webctrl tag='ul' class='cn cn-list-hierarchical-xs cn--idx-0 cn-container_F9DF5F46-1F80-3E1A-85AC-17E61B684013' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='article'/&gt;&lt;webctrl tag='div' class='cd__wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='cd__content' idx='1'/&gt;&lt;webctrl tag='h3' class='cd__headline' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' class='cd__headline-text' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_16" MaxNumberOfResults="100" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2692b75-4f74-4bca-9ee3-b0605e35e4c9" InformativeScreenshot="9b321c0fd1eda17f035cdf48abe63811" Selector="&lt;webctrl id='sport-zone-1' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Reddit" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_9" Url="[config(&quot;sportSiteReddit&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[redditSportsScrape]" DisplayName="Extract Structured Data Reddit" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='RedditSportNews' attr='text'&gt;&lt;webctrl tag='div' class='_3ozFtOe6WpJEMUtxDOIvtU' idx='1'/&gt;&lt;webctrl tag='div' class='_1vyLCp-v-tE5QvZovwrASa' idx='1'/&gt;&lt;webctrl tag='div' class='_1OVBBWLtHoSPfGCRaPzpTf _3nSp9cdBpqL13CqjdMr2L_' idx='1'/&gt;&lt;webctrl tag='div' class='rpBJOHq2PR60pnwJlUyP0' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='h3' class='_eYtD2XCVieq6emjKBH3m' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_17" MaxNumberOfResults="6" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="00932d9e-535d-415f-9c91-35219faf0595" InformativeScreenshot="5cb893d8bbe1803d20a79e8099172b7e" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='SHORTCUT_FOCUSABLE_DIV' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_10" Url="[config(&quot;sportSiteWikipedia&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[wikiSportsScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='WikipediaSportsFacts' attr='text'&gt;&lt;webctrl tag='tr' idx='1'/&gt;&lt;webctrl tag='td' idx='1'/&gt;&lt;webctrl tag='div' idx='9'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="100" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f1e3c9c-933d-42f2-88e4-0e4c42ea7670" InformativeScreenshot="c62d4bd677daa597b6c90d04d4a54bd2" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-              </Sequence>
-            </ActivityAction>
-          </ui:OpenBrowser.Body>
+        <TryCatch DisplayName="Try Catch Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </ui:OpenBrowser>
+          <TryCatch.Try>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="[config(&quot;sportSiteCNN&quot;).ToString]">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="375.2,694.4" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[cnnSportScrape]" DisplayName="Extract Structured Data CNN" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='CNNSportNews' attr='text'&gt;&lt;webctrl tag='div' class='l-container' idx='1'/&gt;&lt;webctrl tag='div' class='zn__containers' idx='1'/&gt;&lt;webctrl tag='div' class='column zn' idx='1'/&gt;&lt;webctrl tag='ul' class='cn cn-list-hierarchical-xs cn--idx-0 cn-container_F9DF5F46-1F80-3E1A-85AC-17E61B684013' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;webctrl tag='article'/&gt;&lt;webctrl tag='div' class='cd__wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='cd__content' idx='1'/&gt;&lt;webctrl tag='h3' class='cd__headline' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' class='cd__headline-text' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_16" MaxNumberOfResults="100" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2692b75-4f74-4bca-9ee3-b0605e35e4c9" InformativeScreenshot="9b321c0fd1eda17f035cdf48abe63811" Selector="&lt;webctrl id='sport-zone-1' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Reddit" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_9" Url="[config(&quot;sportSiteReddit&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[redditSportsScrape]" DisplayName="Extract Structured Data Reddit" ExtractMetadata="&lt;extract&gt;&lt;column exact='0' name='RedditSportNews' attr='text'&gt;&lt;webctrl tag='div' class='_3ozFtOe6WpJEMUtxDOIvtU' idx='1'/&gt;&lt;webctrl tag='div' class='_1vyLCp-v-tE5QvZovwrASa' idx='1'/&gt;&lt;webctrl tag='div' class='_1OVBBWLtHoSPfGCRaPzpTf _3nSp9cdBpqL13CqjdMr2L_' idx='1'/&gt;&lt;webctrl tag='div' class='rpBJOHq2PR60pnwJlUyP0' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='h3' class='_eYtD2XCVieq6emjKBH3m' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_17" MaxNumberOfResults="6" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="00932d9e-535d-415f-9c91-35219faf0595" InformativeScreenshot="5cb893d8bbe1803d20a79e8099172b7e" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='SHORTCUT_FOCUSABLE_DIV' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_10" Url="[config(&quot;sportSiteWikipedia&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[wikiSportsScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='WikipediaSportsFacts' attr='text'&gt;&lt;webctrl tag='tr' idx='1'/&gt;&lt;webctrl tag='td' idx='1'/&gt;&lt;webctrl tag='div' idx='9'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_18" MaxNumberOfResults="100" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f1e3c9c-933d-42f2-88e4-0e4c42ea7670" InformativeScreenshot="c62d4bd677daa597b6c90d04d4a54bd2" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Fatal" Message="[&quot;Please check internet connection or website URLs in config file.&quot;]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
         <Sequence DisplayName="Sport Stored Content" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_174">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1641,57 +1694,83 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_6" Url="[config(&quot;hobbySiteGamerant&quot;).ToString]">
-          <ui:OpenBrowser.Body>
-            <ActivityAction x:TypeArguments="x:Object">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="375.2,694.4" sap2010:WorkflowViewState.IdRef="Sequence_198">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[gamerantHobbyScrape]" DisplayName="Extract Structured Data Gamerant" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='GameRant News' attr='text'&gt;&lt;webctrl tag='article'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_19" MaxNumberOfResults="6" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69aff5cf-cb58-4fab-b215-6f0e9148faaf" InformativeScreenshot="c60fc89841ac373bcf3cf94e35828c4b" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div' tag='DIV' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Techradar" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_11" Url="[config(&quot;hobbySiteTechradar&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[techradarHobbyScrape]" DisplayName="Extract Structured Data Techradar" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='techRadarNews' attr='text'&gt;&lt;webctrl tag='div' class='listingResults ' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='a' class='article-link' idx='1'/&gt;&lt;webctrl tag='article'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_20" MaxNumberOfResults="6" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bafc5aba-ba56-4b74-adc5-a65a3b2cbbd8" InformativeScreenshot="e98ae6c315d7fc0f85145a1ba7549460" Selector="&lt;webctrl parentid='content' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_12" Url="[config(&quot;hobbySiteWikipedia&quot;).ToString]" />
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[wikipediaHobbyScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='WikipediaFacts' attr='text'&gt;&lt;webctrl tag='tr' idx='1'/&gt;&lt;webctrl tag='td' idx='1'/&gt;&lt;webctrl tag='div' class='portal-column-left' idx='1'/&gt;&lt;webctrl tag='div' idx='4'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_21" MaxNumberOfResults="3" SimulateClick="True">
-                  <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a7a3617-ff1f-4f9e-8aef-1c447b7537e2" InformativeScreenshot="dda419e352b6191ac4aeb3ae9ad8850a" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                    </ui:Target>
-                  </ui:ExtractData.Target>
-                </ui:ExtractData>
-              </Sequence>
-            </ActivityAction>
-          </ui:OpenBrowser.Body>
+        <TryCatch DisplayName="Try Catch Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </ui:OpenBrowser>
+          <TryCatch.Try>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_6" Url="[config(&quot;hobbySiteGamerant&quot;).ToString]">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Extract Content" sap:VirtualizedContainerService.HintSize="375.2,694.4" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[gamerantHobbyScrape]" DisplayName="Extract Structured Data Gamerant" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='GameRant News' attr='text'&gt;&lt;webctrl tag='article'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_19" MaxNumberOfResults="6" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="69aff5cf-cb58-4fab-b215-6f0e9148faaf" InformativeScreenshot="c60fc89841ac373bcf3cf94e35828c4b" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Techradar" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_11" Url="[config(&quot;hobbySiteTechradar&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[techradarHobbyScrape]" DisplayName="Extract Structured Data Techradar" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='techRadarNews' attr='text'&gt;&lt;webctrl tag='div' class='listingResults ' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='a' class='article-link' idx='1'/&gt;&lt;webctrl tag='article'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_20" MaxNumberOfResults="6" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bafc5aba-ba56-4b74-adc5-a65a3b2cbbd8" InformativeScreenshot="e98ae6c315d7fc0f85145a1ba7549460" Selector="&lt;webctrl parentid='content' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Wikipedia" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_12" Url="[config(&quot;hobbySiteWikipedia&quot;).ToString]" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[wikipediaHobbyScrape]" DisplayName="Extract Structured Data Wikipedia" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='WikipediaFacts' attr='text'&gt;&lt;webctrl tag='tr' idx='1'/&gt;&lt;webctrl tag='td' idx='1'/&gt;&lt;webctrl tag='div' class='portal-column-left' idx='1'/&gt;&lt;webctrl tag='div' idx='4'/&gt;&lt;webctrl tag='ul' idx='1'/&gt;&lt;webctrl tag='li'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_21" MaxNumberOfResults="3" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7a7a3617-ff1f-4f9e-8aef-1c447b7537e2" InformativeScreenshot="dda419e352b6191ac4aeb3ae9ad8850a" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody' tag='TBODY' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Fatal" Message="[&quot;Please check internet connection or website URLs in config file.&quot;]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
         <Sequence DisplayName="Hobby Stored Content" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_202">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2286,7 +2365,7 @@
         </Sequence>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Store to Content Sent Database" sap:VirtualizedContainerService.HintSize="776,68.8" sap2010:WorkflowViewState.IdRef="Sequence_148">
+    <Sequence DisplayName="Store to Content Sent Database" sap:VirtualizedContainerService.HintSize="283.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_148">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2508,7 +2587,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="776,2509.6" sap2010:WorkflowViewState.IdRef="Sequence_137">
+    <Sequence DisplayName="Content Delivery" sap:VirtualizedContainerService.HintSize="283.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_137">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="firstName" />
         <Variable x:TypeArguments="x:String" Name="lastName" />
@@ -2517,11 +2596,11 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="734.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,355.2" sap2010:WorkflowViewState.IdRef="Sequence_245">
             <sap:WorkflowViewStateService.ViewState>
@@ -2567,7 +2646,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Get Queue Items" sap:VirtualizedContainerService.HintSize="734.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_243">
+      <Sequence DisplayName="Get Queue Items" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_243">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="dayOfWeek" />
         </Sequence.Variables>
@@ -3179,13 +3258,13 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
       </Sequence>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[userDatabase]" DisplayName="Send Content to Users" sap:VirtualizedContainerService.HintSize="734.4,2122.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[userDatabase]" DisplayName="Send Content to Users" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="684.8,1973.6" sap2010:WorkflowViewState.IdRef="Sequence_86">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="684.8,993.6" sap2010:WorkflowViewState.IdRef="Sequence_86">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3406,19 +3485,19 @@
                 <x:Reference>__ReferenceID2</x:Reference>
                 <x:Reference>__ReferenceID3</x:Reference>
               </Flowchart>
-              <Sequence DisplayName=" Format &amp; Email" sap:VirtualizedContainerService.HintSize="643.2,1048.8" sap2010:WorkflowViewState.IdRef="Sequence_98">
+              <Sequence DisplayName=" Format &amp; Email" sap:VirtualizedContainerService.HintSize="643.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_98">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="template" />
                   <Variable x:TypeArguments="x:String" Name="emailAddress" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ReadTextFile Content="[template]" DisplayName="Read Content Delivery Email Template File" FileName="[config(&quot;contentDeliveryTemplatePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Email" DisplayName="Get Row Email" sap:VirtualizedContainerService.HintSize="433.6,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[row]">
+                <ui:ReadTextFile Content="[template]" DisplayName="Read Content Delivery Email Template File" FileName="[config(&quot;contentDeliveryTemplatePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Email" DisplayName="Get Row Email" sap:VirtualizedContainerService.HintSize="384,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[row]">
                   <ui:GetRowItem.Value>
                     <OutArgument x:TypeArguments="x:String">[emailAddress]</OutArgument>
                   </ui:GetRowItem.Value>
@@ -3429,20 +3508,20 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:GetRowItem>
-                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="First Name" DisplayName="Get Row First Name" sap:VirtualizedContainerService.HintSize="433.6,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[row]">
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="First Name" DisplayName="Get Row First Name" sap:VirtualizedContainerService.HintSize="384,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[row]">
                   <ui:GetRowItem.Value>
                     <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
                   </ui:GetRowItem.Value>
                 </ui:GetRowItem>
-                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Last Name" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="433.6,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[row]">
+                <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Last Name" DisplayName="Get Row Last Name" sap:VirtualizedContainerService.HintSize="384,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[row]">
                   <ui:GetRowItem.Value>
                     <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
                   </ui:GetRowItem.Value>
                 </ui:GetRowItem>
-                <TryCatch DisplayName="Try Catch Email User" sap:VirtualizedContainerService.HintSize="433.6,520.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                <TryCatch DisplayName="Try Catch Email User" sap:VirtualizedContainerService.HintSize="384,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -3486,7 +3565,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Email not sent to user: &quot; + firstName +  &quot;, email: &quot; + emailAddress]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Email not sent to user: &quot; + firstName + &quot; &quot; + lastName +  &quot;, email: &quot; + emailAddress]" />
                           <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_218">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[emailSent]</OutArgument>
@@ -3519,18 +3598,18 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, System.DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm&quot;), contPref, subjectNews(0), emailSent}]" DataTable="[contentTransmissionReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="643.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, System.DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm&quot;), contPref, subjectNews(0), emailSent}]" DataTable="[contentTransmissionReport]" DisplayName="Add to Content Transmission Report" sap:VirtualizedContainerService.HintSize="643.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open Excel UserDatabase Workbook" sap:VirtualizedContainerService.HintSize="734.4,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Open Excel UserDatabase Workbook" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" WorkbookPath="[config(&quot;workbookPath&quot;).ToString]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
