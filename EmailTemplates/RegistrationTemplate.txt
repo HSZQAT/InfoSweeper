@@ -1,0 +1,7 @@
+Dear {0},
+
+Thank you for registering with us.
+Look forward to your first content delivery soon!
+
+Thank you,
+InfoSweeper Team
