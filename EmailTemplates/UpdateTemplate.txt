@@ -1,0 +1,6 @@
+Dear {0},
+
+Your details have been updated.
+
+Thank you,
+InfoSweeper Team

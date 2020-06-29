@@ -1,0 +1,7 @@
+Dear {0},
+
+Your details will be removed from our system.
+You can always sign up again at any point!
+
+Thank you,
+InfoSweeper Team
